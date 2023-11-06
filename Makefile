@@ -1,0 +1,7 @@
+SOURCES = loop.asm
+EXECUTABLE = loop
+PLATFORM = elf_x86_64
+
+$(EXECUTABLE): $(SOURCES)
+	as -o $(EXECUTABLE).o $(SOURCES)
+	ld -m $(PLATFORM) -o $(EXECUTABLE) $(EXECUTABLE).o
